@@ -7,6 +7,8 @@
     "serve": "vite preview"
   },
   "dependencies": {
+    "jss": "^10.5.1",
+    "jss-preset-default": "^10.5.1",
     "vue": "^3.0.5",
     "vue-jss": "^0.0.4"
   },
