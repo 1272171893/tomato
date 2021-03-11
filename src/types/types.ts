@@ -1,0 +1,29 @@
+export enum SchemaTypes {
+  "NUMBER" = "number",
+  "INTEGER" = "integer",
+  "STRING" = "string",
+  "OBJECT" = "object",
+  "ARRAY" = "array",
+  "BOOLEAN" = "boolean",
+}
+type SchemaRef = { $ref: string };
+export interface Schema {
+  type: SchemaTypes | string;
+  const?: any;
+  format?: string;
+  default?: any;
+  properties?: {
+    [key: string]: Schema | { $ref: string };
+  };
+  items?: Schema | Schema[] | SchemaRef;
+  dependencied?: {
+    [key: string]: string[] | Schema | SchemaRef;
+  };
+  oneOf?: Schema[];
+//   vjsf?: VueJsonSchemaConfig;
+  require: string[];
+  enum?: any[];
+  enumKeyValue?: any[];
+  additionalProprtties?: any;
+  additionalItems?: Schema;
+}
